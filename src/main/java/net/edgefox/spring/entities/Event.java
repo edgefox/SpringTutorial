@@ -46,4 +46,21 @@ public class Event {
     public void setUsers(Collection<User> users) {
         this.users = users;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Event event = (Event) o;
+
+        if (!title.equals(event.title)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return title.hashCode();
+    }
 }

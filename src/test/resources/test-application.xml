@@ -15,8 +15,19 @@
     <context:component-scan base-package="net.edgefox.spring.web" />
     <mvc:annotation-driven />
 
-    <context:component-scan base-package="net.edgefox.spring.dao"/>
-    <context:component-scan base-package="net.edgefox.spring.service"/>
+    <bean id="userServiceMock" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="net.edgefox.spring.service.UserService" />
+    </bean>
+    <bean id="eventServiceMock" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="net.edgefox.spring.service.EventService" />
+    </bean>
+
+    <bean id="userDAOMock" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="net.edgefox.spring.dao.UserDAO" />
+    </bean>
+    <bean id="eventDAOMock" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="net.edgefox.spring.dao.EventDAO" />
+    </bean>
 
     <bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"

@@ -1,9 +1,7 @@
 package net.edgefox.spring.web;
 
 import net.edgefox.spring.entities.Event;
-import net.edgefox.spring.entities.User;
 import net.edgefox.spring.service.EventService;
-import net.edgefox.spring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
